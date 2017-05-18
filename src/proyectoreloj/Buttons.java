@@ -66,7 +66,7 @@ public class Buttons {
      * This function is used to change both the clock and alarm settings
      */
     public static void plusHour(){
-        Clock.hourCurrent.plusHours(Integer.parseInt(JOptionPane.showInputDialog("Introduzca la hora")));
+        Clock.hourCurrent.plusHours(Integer.parseInt(JOptionPane.showInputDialog("Enter the desired time")));
         Display.showHour();
         
     }
@@ -75,7 +75,7 @@ public class Buttons {
      * This function is used to change both the clock and alarm settings
      */
     public static void plusMinutes(){
-        Clock.hourCurrent.plusMinutes(Integer.parseInt(JOptionPane.showInputDialog("Introduzca los minutos")));
+        Clock.hourCurrent.plusMinutes(Integer.parseInt(JOptionPane.showInputDialog("Enter the desired minutes")));
         Display.showHour();
     
     }
