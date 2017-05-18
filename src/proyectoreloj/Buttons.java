@@ -84,7 +84,7 @@ public class Buttons {
      * Button "stop" to stop the alarm when it rings
      */
     public static void stopAlarm(){
-        System.out.println("STOP ALARMA");
+        System.out.println("STOP ALARM");
         Speaker.StopSound();
         
     }
