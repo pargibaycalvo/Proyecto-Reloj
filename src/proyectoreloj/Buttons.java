@@ -66,18 +66,30 @@ public class Buttons {
      * This function is used to change both the clock and alarm settings
      */
     public static void plusHour(){
-        Clock.hourCurrent.plusHours(Integer.parseInt(JOptionPane.showInputDialog("Enter the desired time")));
-        Display.showHour();
-        
+        if (Display.ledSet == true) {
+            if (Display.ledClock == true) {
+                Clock.hourCurrent = Clock.hourCurrent.plusHours(1);
+                Display.showHour();
+            } else {
+                Clock.alarm = Clock.alarm.plusHours(1);
+                Display.showAlarm();
+            }
+        }
     }
     /**
      * Button "+" to increase minutes
      * This function is used to change both the clock and alarm settings
      */
     public static void plusMinutes(){
-        Clock.hourCurrent.plusMinutes(Integer.parseInt(JOptionPane.showInputDialog("Enter the desired minutes")));
-        Display.showHour();
-    
+        if (Display.ledSet == true) {
+            if (Display.ledClock == true) {
+                Clock.hourCurrent = Clock.hourCurrent.plusMinutes(1);
+                Display.showHour();
+            } else {
+                Clock.alarm = Clock.alarm.plusMinutes(1);
+                Display.showAlarm();
+            }
+        }
     }
     /**
      * Button up the clock

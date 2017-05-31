@@ -5,6 +5,8 @@
  */
 package proyectoreloj;
 
+import java.time.LocalTime;
+
 
 /**
  *
@@ -19,9 +21,17 @@ public class Display {
      * Displays the current clock time.
      */
     public static void showHour(){
-        System.out.println(Clock.hourCurrent.getHour()+" : "+Clock.hourCurrent.getMinute());
+       LocalTime imp = LocalTime.now();
+        imp = imp.plusHours(Clock.hourCurrent.getHour())
+                   .plusMinutes(Clock.hourCurrent.getMinute());
+        System.out.println(imp.getHour() + " : " + imp.getMinute());
     }
-    
+    /**
+     * Show the time when the alarm rings.
+     */
+    public static void showAlarm(){
+        System.out.println(Clock.alarm.getHour()+" : "+Clock.alarm.getMinute());
+    }
     /**
      * Led clock on (you are within the time change setting)
      * Led Alarm on (You are inside the alarm configuration)(If the bell (alarm) is on and SET is not, it means that the alarm is activated, not that you are inside the alarm configuration)
