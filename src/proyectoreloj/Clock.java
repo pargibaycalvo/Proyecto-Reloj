@@ -22,6 +22,9 @@ public class Clock {
     
     public static void main(String[] args) {
         // TODO code application logic here
+        /**
+         * At the start of the program the alarm message will be skipped as it will run continuously without stopping.
+         */
          TimerTask task = new TimerTask() {
                             @Override
                             public void run() {
