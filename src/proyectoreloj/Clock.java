@@ -22,6 +22,16 @@ public class Clock {
     
     public static void main(String[] args) {
         // TODO code application logic here
+         TimerTask task = new TimerTask() {
+                            @Override
+                            public void run() {
+                            if (alarm.getMinute() == LocalTime.now().getMinute()) {
+                            System.out.println("¡¡¡ALARMA!!!");
+                            } else {
+                            System.out.println(LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":" + LocalTime.now().getSecond());
+                         }
+                        }
+                };
         /**
          * Physical clock
          * This is the physical clock that we would have in front with the buttons and all the configurations
@@ -51,16 +61,6 @@ public class Clock {
                     switch(opcion2){
                         case 1:
                             Buttons.alarmON();
-                             TimerTask task = new TimerTask() {
-                            @Override
-                            public void run() {
-                            if (alarm.getMinute() == LocalTime.now().getMinute()) {
-                            System.out.println("¡¡¡ALARMA!!!");
-                            } else {
-                            System.out.println(LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":" + LocalTime.now().getSecond());
-                         }
-                        }
-                };
                             break;
                         case 2:
                             Buttons.alarmOFF();
