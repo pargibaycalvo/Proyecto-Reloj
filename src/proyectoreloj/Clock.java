@@ -7,7 +7,6 @@ package proyectoreloj;
 
 
 import java.time.LocalTime;
-import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JOptionPane;
 
@@ -52,6 +51,16 @@ public class Clock {
                     switch(opcion2){
                         case 1:
                             Buttons.alarmON();
+                             TimerTask task = new TimerTask() {
+                            @Override
+                            public void run() {
+                            if (alarm.getMinute() == LocalTime.now().getMinute()) {
+                            System.out.println("¡¡¡ALARMA!!!");
+                            } else {
+                            System.out.println(LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":" + LocalTime.now().getSecond());
+                         }
+                        }
+                };
                             break;
                         case 2:
                             Buttons.alarmOFF();

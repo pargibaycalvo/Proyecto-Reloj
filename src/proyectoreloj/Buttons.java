@@ -6,8 +6,6 @@
 package proyectoreloj;
 
 import java.time.LocalTime;
-import java.util.TimerTask;
-import javax.swing.JOptionPane;
 import static proyectoreloj.Clock.alarm;
 
 /**
@@ -25,18 +23,7 @@ public class Buttons {
      */
     public static void alarmON(){
         Display.showLeds(true,false,false);
-        alarm = LocalTime.now().plusMinutes(1);
-        System.out.println("Alarm Saved :" + alarm.getMinute() + ":" + alarm.getSecond());
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                if (alarm.getMinute() == LocalTime.now().getMinute()) {
-                    System.out.println("¡¡¡ALARMA!!!");
-                } else {
-                    System.out.println(LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":" + LocalTime.now().getSecond());
-                }
-            }
-        };
+        System.out.println("Alarm Actived");
     }
     /**
      * Button OFF
@@ -44,7 +31,7 @@ public class Buttons {
      */
     public static void alarmOFF(){
         Display.showLeds(false,false,false);
-        JOptionPane.showMessageDialog(null,"Alarm Disable");
+        System.out.println("Alarm Disable");
     }
     /**
      * Button clock
@@ -60,6 +47,8 @@ public class Buttons {
      */
     public static void configAlarm(){
         Display.showLeds(true,false,false);
+        alarm = LocalTime.now().plusMinutes(1);
+        System.out.println("Alarm Saved :" + alarm.getMinute() + ":" + alarm.getSecond());
     }
     /**
      * Button "+" to increase hour 
